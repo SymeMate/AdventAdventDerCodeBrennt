@@ -10,15 +10,25 @@ public class Day1 {
     {
         String input = Files.readString(Path.of("InputDay1.txt"));
         int temp = 0;
-        int biggest = 0;
+        int first = 0;
+        int second = 0;
+        int third = 0;
         String[] inputarray = input.split("\n");
 
         for (String a :
                 inputarray) {
             if (a.isBlank()) {
-                if(biggest<=temp){
-                    biggest = temp;
+                if(first <=temp){
+                    third = second;
+                    second = first;
+                    first = temp;
+                } else if (second <= temp) {
+                    third = second;
+                    second = temp;
+                }else if(third <= temp) {
+                    third = temp;
                 }
+                System.out.println(temp);
                 temp = 0;
             }else{
 
@@ -41,7 +51,8 @@ public class Day1 {
             }
         }*/
         
-            System.out.println(biggest);
+            System.out.println(first + " "+ second+ " "+third);
+        System.out.println(first + second+third);
 
 
     }
