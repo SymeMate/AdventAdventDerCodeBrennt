@@ -1,10 +1,10 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.LinkedList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Day6_1 {
+public class Day6_2 {
     public static void main(String args[]) throws IOException {  //static method
         String input = Files.readString(Path.of("InputDay6.txt"));
         LinkedList<Character> markerList = new LinkedList<Character>();
@@ -12,7 +12,7 @@ public class Day6_1 {
         boolean goodToGo = false;
         int markerPos = 0;
         for(int i = 0; i < input.length();i++){
-            if(markerList.size() == 4){
+            if(markerList.size() == 14){
                 markerList.add(input.charAt(i));
                 markerList.remove(0);
                 for (Character c :
